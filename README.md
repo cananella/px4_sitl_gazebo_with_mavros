@@ -62,5 +62,35 @@ turn on QGC
     mv truck_1 ~/PX4-Autopilot/Tools/sitl_gazebo/model/truck_1
     mv my_world.world ~/PX4-Autopilot/Tools/sitl_gazebo/worlds/my_world.world
     
+test
+    
+    cd ~/PX4-Autopilot
+    make px4_sitl gazebo_my_model PX4_SITL_WORLD=my_world
+
+
+# mavros를 이용한 시뮬
+
+ros 와 mavros 패키지 필요
+    sudo apt-get install ros-<rosversion>-mavros
+
+    cd ~/PX4-Autopilot
+    DONT_RUN=1 make px4_sitl_default gazebo 
+    source Tools/setup_gazebo.bash $(pwd) $(pwd)/build/px4_sitl_default 
+    export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd) 
+    export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd)/Tools/sitl_gazebo 
+    
+매번 배쉬에서 실행해줘야함 혹은 ~/.bashrc 마지막줄에 추가
+    
+    cd ~/PX4-Autopilot
+    DONT_RUN=1 make px4_sitl_default gazebo > /dev/null
+    source Tools/setup_gazebo.bash $(pwd) $(pwd)/build/px4_sitl_default > /dev/null
+    export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd) > /dev/null
+    export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd)/Tools/sitl_gazebo > /dev/null
+    cd
+    
+    
+실행
+
+
  
 
