@@ -39,4 +39,18 @@ turn on QGC
     cd
     git clone https://github.com/cananella/px4_sitl_gazebo_with_mavros.git
     cd px4_sitl_gazebo_with_mavros
-    cp ./my_model ~/PX4-Autopilot/Tools/sitl_gazebo/model/my_model
+    mv ./my_model ~/PX4-Autopilot/Tools/sitl_gazebo/model/my_model
+    
+ PX4_Autopilot/ROMFS/px4fmu_commom/init.d-posix/airframes  안에 1011_iris_irlock 파일을 복사한후 <겹치지않는 4자리수>_my_model 로 변경   
+ PX4_Autopilot/build/px4_sitl_default/etc/init.d-posix/airframes   안에 1011_iris_irlock 파일을 복사한후 <겹치지않는 4자리수>_my_model 로 변경 
+ PX4_Autopilot/platforms/posix/cmake 안의 sitl_target.cmake 파일 수정 set(models 마지막에 my_model 삽입
+ 
+    cd ~/PX4_Autopilot
+    make px4_sitl gazebo_my_model
+    
+# import custom world in px4 firmware
+
+    cd ~/px4_sitl_gazebo_with_mavros
+    
+
+
