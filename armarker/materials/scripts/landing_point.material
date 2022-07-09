@@ -1,0 +1,16 @@
+material landingmat/armarker
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        // Relative to the location of the material script
+        texture ../textures/marker_2074.png
+        // Repeat the texture over the surface (4 per face)
+        //scale 10 10
+      }
+    }
+  }
+}

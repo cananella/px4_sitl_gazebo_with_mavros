@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="armarker">
+    <link name="armarker_link">
+      <visual name="armarker">
+        <geometry>
+          <box>
+            <size>1 1 0.001</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://armarker/materials/scripts</uri>
+            <uri>model://armarker/materials/textures</uri>
+            <name>landingmat/armarker</name>
+          </script>
+        </material>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>1 1 0.001</size>
+          </box>
+        </geometry>
+        <collide_bitmask>0x01</collide_bitmask>
+      </collision>
+    </link>
+   <static>true</static>
+  </model>
+  <static>true</static>
+</sdf>
