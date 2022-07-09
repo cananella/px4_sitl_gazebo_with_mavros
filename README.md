@@ -38,4 +38,5 @@ turn on QGC
 
     cd
     git clone https://github.com/cananella/px4_sitl_gazebo_with_mavros.git
+    cd px4_sitl_gazebo_with_mavros
     
