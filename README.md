@@ -39,4 +39,4 @@ turn on QGC
     cd
     git clone https://github.com/cananella/px4_sitl_gazebo_with_mavros.git
     cd px4_sitl_gazebo_with_mavros
-    
+    cp ./my_model ~/PX4-Autopilot/Tools/sitl_gazebo/model/my_model
