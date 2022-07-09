@@ -37,5 +37,5 @@ turn on QGC
 # import custom model in px4 firmware
 
     cd
-    git clone
+    git clone https://github.com/cananella/px4_sitl_gazebo_with_mavros.git
     
