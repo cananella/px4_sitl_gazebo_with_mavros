@@ -72,8 +72,14 @@ test
 
 ros 와 mavros 패키지 필요
     sudo apt-get install ros-<rosversion>-mavros
+    
+launchfile
 
-    cd ~/PX4-Autopilot
+    cd ~/px4_sitl_gazebo_with_mavros
+    mv mavros_posix_sitl_my_model.launch ~/PX4-Autopilot/launch/mavros_posix_sitl_my_model.launch
+
+
+    cd ~/PX4-Autopilot  (px4 펌웨어 디렉토리)
     DONT_RUN=1 make px4_sitl_default gazebo 
     source Tools/setup_gazebo.bash $(pwd) $(pwd)/build/px4_sitl_default 
     export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd) 
@@ -88,8 +94,18 @@ ros 와 mavros 패키지 필요
     export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd)/Tools/sitl_gazebo > /dev/null
     cd
     
-    
+       
 실행
+
+   roslaunch px4 mavros_posix_sitl_my_model.launch
+   
+
+rqt 로 카메라 topic 확인
+
+    rqt_image_view
+    
+cam topic => /camera/rgb/image_raw
+depth topic => /camera/depth/image_raw
 
 
  
