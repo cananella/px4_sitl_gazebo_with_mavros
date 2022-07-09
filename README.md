@@ -71,15 +71,13 @@ test
 # mavros를 이용한 시뮬
 
 ros 와 mavros 패키지 필요
-    sudo apt-get install ros-<rosversion>-mavros
+
     
-launchfile
-
-    cd ~/px4_sitl_gazebo_with_mavros
-    mv mavros_posix_sitl_my_model.launch ~/PX4-Autopilot/launch/mavros_posix_sitl_my_model.launch
 
 
-    cd ~/PX4-Autopilot  (px4 펌웨어 디렉토리)
+[Launching Gazebo with ROS Wrappers ](https://docs.px4.io/main/en/simulation/ros_interface.html#launching-gazebo-with-ros-wrappers)
+
+    cd ~/PX4-Autopilot  
     DONT_RUN=1 make px4_sitl_default gazebo 
     source Tools/setup_gazebo.bash $(pwd) $(pwd)/build/px4_sitl_default 
     export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd) 
@@ -93,6 +91,11 @@ launchfile
     export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd) > /dev/null
     export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd)/Tools/sitl_gazebo > /dev/null
     cd
+    
+launchfile 
+
+    cd ~/px4_sitl_gazebo_with_mavros
+    mv mavros_posix_sitl_my_model.launch ~/PX4-Autopilot/launch/mavros_posix_sitl_my_model.launch
     
        
 실행
