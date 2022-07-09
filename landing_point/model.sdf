@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="landing_point">
+    <link name="landing_point_link">
+      <visual name="landing_point">
+        <geometry>
+          <mesh>
+            <uri>model://landing_point/meshes/model.dae</uri>
+            <submesh>
+              <name>landing_point</name>
+            </submesh>
+          </mesh>
+          <!-- <box>
+            <size>1 1 0.001</size>
+          </box> -->
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/Blue</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <!-- <uri>model://landing_point/materials/scripts</uri>
+            <uri>model://landing_point/materials/textures</uri>
+            <name>landingmat/armarker</name> -->
+          </script>
+        </material>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://landing_point/meshes/model.dae</uri>
+          </mesh>
+        </geometry>
+        <surface/>
+        <contact/>
+        <collide_bitmask>0x01</collide_bitmask>
+      </collision>
+    </link>
+   <static>true</static>
+  </model>
+  <static>true</static>
+</sdf>
