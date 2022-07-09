@@ -39,11 +39,16 @@ turn on QGC
     cd
     git clone https://github.com/cananella/px4_sitl_gazebo_with_mavros.git
     cd px4_sitl_gazebo_with_mavros
-    mv ./my_model ~/PX4-Autopilot/Tools/sitl_gazebo/model/my_model
+    mv my_model ~/PX4-Autopilot/Tools/sitl_gazebo/model/my_model
     
- PX4_Autopilot/ROMFS/px4fmu_commom/init.d-posix/airframes  안에 1011_iris_irlock 파일을 복사한후 <겹치지않는 4자리수>_my_model 로 변경   
- PX4_Autopilot/build/px4_sitl_default/etc/init.d-posix/airframes   안에 1011_iris_irlock 파일을 복사한후 <겹치지않는 4자리수>_my_model 로 변경 
- PX4_Autopilot/platforms/posix/cmake 안의 sitl_target.cmake 파일 수정 set(models 마지막에 my_model 삽입
+ PX4_Autopilot/ROMFS/px4fmu_commom/init.d-posix/airframes  
+ 안에 1011_iris_irlock 파일을 복사한후 <겹치지않는 4자리수>_my_model 로 변경   
+ 
+ PX4_Autopilot/build/px4_sitl_default/etc/init.d-posix/airframes   
+ 안에 1011_iris_irlock 파일을 복사한후 <겹치지않는 4자리수>_my_model 로 변경 
+ 
+ PX4_Autopilot/platforms/posix/cmake 안의 sitl_target.cmake 파일 수정    
+ set(models 마지막에 my_model 삽입
  
     cd ~/PX4_Autopilot
     make px4_sitl gazebo_my_model
@@ -51,6 +56,11 @@ turn on QGC
 # import custom world in px4 firmware
 
     cd ~/px4_sitl_gazebo_with_mavros
+    mv armarker ~/PX4-Autopilot/Tools/sitl_gazebo/model/armarker
+    mv landing_point ~/PX4-Autopilot/Tools/sitl_gazebo/model/landing_point
+    mv 3rd_building ~/PX4-Autopilot/Tools/sitl_gazebo/model/3rd_building
+    mv truck_1 ~/PX4-Autopilot/Tools/sitl_gazebo/model/truck_1
+    mv my_world.world ~/PX4-Autopilot/Tools/sitl_gazebo/worlds/my_world.world
     
-
+ 
 
