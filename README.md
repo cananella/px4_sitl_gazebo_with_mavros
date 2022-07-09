@@ -104,7 +104,7 @@ rqt 로 카메라 topic 확인
 
     rqt_image_view
     
-cam topic => /camera/rgb/image_raw
+cam topic => /camera/rgb/image_raw    
 depth topic => /camera/depth/image_raw
 
 
